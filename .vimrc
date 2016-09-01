@@ -17,6 +17,9 @@ Plugin 'gmarik/Vundle.vim'
 
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/syntastic'
+Plugin 'nvie/vim-flake8'
+
 
 " ------------------ Plugin list ends --------------------
 
@@ -44,11 +47,19 @@ let g:SimpylFold_docstring_preview=1
 " UTF8
 set encoding=utf-8
 
+
+" Syntax-Highlighting
+let python_highlight_all=1
+
+syntax on
+
 " Auto-complete
 " 1st line: make autocomplete window go away when done
 " 2nd line: shortcut for bringing you to definition of something with space-g
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+
 
 " Python-specific
 au BufNewFile,BufRead *.py
@@ -59,6 +70,15 @@ au BufNewFile,BufRead *.py
     \ set expandtab		|
     \ set autoindent		|
     \ set fileformat=unix	
+
+py << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+	project_base_dir = os.environ['VIRTUAL_ENV']
+	activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+	execfile(activate_this, dict(__file__=activate_this))
+EOF
 
 " Full-stack specific
 au BufNewFile,BufRead *.js, *.html, *.css
