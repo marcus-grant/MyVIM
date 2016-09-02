@@ -19,6 +19,8 @@ Plugin 'tmhedberg/SimpylFold'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 Plugin 'nvie/vim-flake8'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 
 " ------------------ Plugin list ends --------------------
@@ -46,6 +48,10 @@ let g:SimpylFold_docstring_preview=1
 
 " UTF8
 set encoding=utf-8
+
+
+" NERDTree
+let NERDTreeShowHidden=1
 
 
 " Syntax-Highlighting
