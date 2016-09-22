@@ -1,0 +1,1 @@
+source ~/Shell/myvim/.vimrc
