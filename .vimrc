@@ -21,7 +21,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'nvie/vim-flake8'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-
+Plugin 'flazz/vim-colorschemes'
 
 " ------------------ Plugin list ends --------------------
 
