@@ -102,3 +102,6 @@ nnoremap <C-H> <C-W><C-H>
 
 " Remap folds to be the spacebar in normal mode
 nnoremap <space> za
+
+" Change backspace key to the same behavior as most editors
+set backspace=indent,eol,start
