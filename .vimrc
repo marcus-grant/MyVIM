@@ -112,3 +112,16 @@ au BufNewFile,BufRead *.js, *.html, *.css
 	\ set softabstop=2	|
 	\ set shiftwidth=2	
 
+" ----------------------- KeyMaps ------------------------
+
+" Set Ctrl-j, k, l, h move to lower, upper, right, left split respectively
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Remap folds to be the spacebar in normal mode
+nnoremap <space> za
+
+" Change backspace key to the same behavior as most editors
+set backspace=indent,eol,start
