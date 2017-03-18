@@ -6,7 +6,7 @@ set rtp+=~/dotfiles/myvim/bundle/Vundle.vim
 "call vundle#begin()
 
 " alternatively, pass a path where Vundle shuold install plugins
-call vundle#begin('~/Shell/myvim/bundle') "<- replace with other path
+call vundle#begin('~/dotfiles/myvim/bundle') "<- replace with other path
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
@@ -32,6 +32,22 @@ call vundle#end()		" required
 filetype plugin indent on	" required
 
 
+" ----------------- ColorScheme Stuff --------------------
+colorscheme railscasts
+
+
+
+
+" ----------------------- KeyMaps ------------------------
+
+" Set Ctrl-j, k, l, h move to lower, upper, right, left split respectively
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Remap folds to be the spacebar in normal mode
+nnoremap <space> za
 
 
 " ------------------- IDE Configs  -----------------------
@@ -41,6 +57,10 @@ set foldlevel=99
 
 " Set to display docstring for folded code
 let g:SimpylFold_docstring_preview=1
+
+" Use relative line numbering instead to make moving easier
+set number " Show current line number as absolute count
+set relativenumber " Show all other numbers as relative to current
 
 " Flag unnecessary whitespace
 "au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
@@ -92,13 +112,3 @@ au BufNewFile,BufRead *.js, *.html, *.css
 	\ set softabstop=2	|
 	\ set shiftwidth=2	
 
-" ----------------------- KeyMaps ------------------------
-
-" Set Ctrl-j, k, l, h move to lower, upper, right, left split respectively
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-
-" Remap folds to be the spacebar in normal mode
-nnoremap <space> za
