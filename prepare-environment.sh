@@ -42,4 +42,8 @@ echo "Launching vim with \'PluginInstall\' command to update bundles"
 vim +PluginInstall +qall
 echo
 
+echo "Copying colorschemes into colorscheme bundle"
+cp extra-colors/* bundle/vim-colorschemes/colors
+echo
+
 echo "Environment setup for vim complete!"

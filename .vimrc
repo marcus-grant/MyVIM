@@ -2,11 +2,11 @@ set nocompatible		" required
 filetype off			" required
 
 " Set runtime path to include Vundle and init
-set rtp+=/root/dotfiles/vim/bundle/Vundle.vim
+set rtp+=/home/marcus/dotfiles/vim/bundle/Vundle.vim
 "call vundle#begin()
 
 " alternatively, pass a path where Vundle shuold install plugins
-call vundle#begin('/root/dotfiles/vim/bundle')
+call vundle#begin('/home/marcus/dotfiles/vim/bundle')
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
@@ -22,6 +22,7 @@ Plugin 'nvie/vim-flake8'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'flazz/vim-colorschemes'
+Plugin 'vim-scripts/indentpython.vim'
 
 " ------------------ Plugin list ends --------------------
 
@@ -33,7 +34,8 @@ filetype plugin indent on	" required
 
 
 " ----------------- ColorScheme Stuff --------------------
-colorscheme railscasts
+colorscheme PaperColor
+set background=dark
 
 
 
@@ -97,14 +99,15 @@ au BufNewFile,BufRead *.py
     \ set autoindent		|
     \ set fileformat=unix	
 
-py << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-	project_base_dir = os.environ['VIRTUAL_ENV']
-	activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-	execfile(activate_this, dict(__file__=activate_this))
-EOF
+"py << EOF
+"import os
+"import sys
+"import vim
+"if 'VIRTUAL_ENV' in os.environ:
+"	project_base_dir = os.environ['VIRTUAL_ENV']
+"	activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+"	execfile(activate_this, dict(__file__=activate_this))
+"EOF
 
 " Full-stack specific
 au BufNewFile,BufRead *.js, *.html, *.css
